@@ -32,10 +32,10 @@
 
         private async void ThemeSettingsService_OnBackgroundChanged(object sender, Brush backgroundBrush)
         {
-            await Dispatcher.CallOnUIThreadAsync(() =>
-            {
-                RootGrid.Background = backgroundBrush;
-            });
+            //await Dispatcher.CallOnUIThreadAsync(() =>
+            //{
+            //    RootGrid.Background = backgroundBrush;
+            //});
         }
     }
 }

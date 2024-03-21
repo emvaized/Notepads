@@ -85,7 +85,7 @@
                                     x:Name="LineHighlighter"
                                     Background="{ThemeResource SystemControlBackgroundListLowBrush}"
                                     BorderThickness="0"
-                                    CornerRadius="{ThemeResource ControlCornerRadius}"
+                                    CornerRadius="0"
                                     Opacity="0.65"
                                     Visibility="Collapsed" />
                             </Canvas>
@@ -159,10 +159,13 @@
             <Setter.Value>
                 <ControlTemplate TargetType="wctc:GridSplitter">
                     <Grid x:Name="RootGrid" Background="Transparent">
+
                         <ContentPresenter
                             HorizontalContentAlignment="Stretch"
                             VerticalContentAlignment="Stretch"
-                            Content="{TemplateBinding Element}" />
+                            Content="{TemplateBinding Element}"
+                            BorderBrush="{ThemeResource MainBorderColor}"
+                            BorderThickness="1,0,1,0" />
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="GridSplitterStates">
                                 <VisualState x:Name="Normal" />

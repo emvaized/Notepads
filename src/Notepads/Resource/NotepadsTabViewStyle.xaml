@@ -314,12 +314,12 @@
                                 BorderThickness="1" />-->
 
                             <!--  Shadow under Start Header  -->
-                            <wctc:DropShadowPanel Grid.Column="0" Style="{StaticResource BottomEdgeShadowStyle}">
-                                <Grid Height="1" Margin="0,0,0,-1" />
+                            <!--<wctc:DropShadowPanel Grid.Column="0" Style="{StaticResource BottomEdgeShadowStyle}">
+                                <Grid Height="0" Margin="0,0,0,-1" />
                                 <wctc:DropShadowPanel.Clip>
                                     <RectangleGeometry Rect="0,-12,1024,12" />
                                 </wctc:DropShadowPanel.Clip>
-                            </wctc:DropShadowPanel>
+                            </wctc:DropShadowPanel>-->
 
                             <ContentPresenter
                                 x:Name="LeftContentPresenter"
@@ -341,12 +341,12 @@
                                 ItemsSource="{TemplateBinding TabItemsSource}" />
 
                             <!--  Shadow under Add Button  -->
-                            <wctc:DropShadowPanel Grid.Column="2" Style="{StaticResource BottomEdgeShadowStyle}">
-                                <Grid Height="1" Margin="-1,0,0,-1" />
+                            <!--<wctc:DropShadowPanel Grid.Column="2" Style="{StaticResource BottomEdgeShadowStyle}">
+                                <Grid Height="0" Margin="-1,0,0,-1" />
                                 <wctc:DropShadowPanel.Clip>
                                     <RectangleGeometry Rect="0,-12,1024,12" />
                                 </wctc:DropShadowPanel.Clip>
-                            </wctc:DropShadowPanel>
+                            </wctc:DropShadowPanel>-->
 
                             <Border
                                 Grid.Column="2"
@@ -365,12 +365,12 @@
                             </Border>
 
                             <!--  Shadow under Padding area (23040 = 3 x 8k resolution in width just in case)  -->
-                            <wctc:DropShadowPanel Grid.Column="3" Style="{StaticResource BottomEdgeShadowStyle}">
-                                <Grid Height="1" Margin="0,0,0,-1" />
+                            <!--<wctc:DropShadowPanel Grid.Column="3" Style="{StaticResource BottomEdgeShadowStyle}">
+                                <Grid Height="0" Margin="0,0,0,-1" />
                                 <wctc:DropShadowPanel.Clip>
                                     <RectangleGeometry Rect="0,-12,23040,12" />
                                 </wctc:DropShadowPanel.Clip>
-                            </wctc:DropShadowPanel>
+                            </wctc:DropShadowPanel>-->
 
                             <ContentPresenter
                                 x:Name="RightContentPresenter"
@@ -382,23 +382,25 @@
                         </Grid>
 
                         <!--  Shadow below Tab Content  -->
-                        <wctc:DropShadowPanel
+                        <!--<wctc:DropShadowPanel
                             Grid.Row="1"
                             VerticalAlignment="Bottom"
                             Canvas.ZIndex="50"
                             Style="{StaticResource TopEdgeShadowStyle}">
-                            <Grid Height="1" />
+                            <Grid Height="0" />
                             <wctc:DropShadowPanel.Clip>
                                 <RectangleGeometry Rect="0,0,23040,12" />
                             </wctc:DropShadowPanel.Clip>
-                        </wctc:DropShadowPanel>
+                        </wctc:DropShadowPanel>-->
 
                         <ContentPresenter
                             x:Name="TabContentPresenter"
                             Grid.Row="1"
-                            Background="{ThemeResource TabViewItemHeaderBackgroundSelected}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{ThemeResource SystemControlPageBackgroundMediumAltMediumBrush}"
+                            BorderBrush="{ThemeResource MainBorderColor}"
+                            BorderThickness="1"
+                            Margin="4,3,4,0"
+                            CornerRadius="{ThemeResource OverlayCornerRadius}"
                             Canvas.ZIndex="100" />
                     </Grid>
                 </ControlTemplate>
@@ -493,12 +495,12 @@
                             </Grid.ColumnDefinitions>
 
                             <!--  Scroll to the left button bottom shadow  -->
-                            <wctc:DropShadowPanel Grid.Column="0" Style="{StaticResource BottomEdgeShadowStyle}">
+                            <!--<wctc:DropShadowPanel Grid.Column="0" Style="{StaticResource BottomEdgeShadowStyle}">
                                 <Grid Height="1" Margin="-1,0,0,-1" />
                                 <wctc:DropShadowPanel.Clip>
                                     <RectangleGeometry Rect="-1,-12,1024,12" />
                                 </wctc:DropShadowPanel.Clip>
-                            </wctc:DropShadowPanel>
+                            </wctc:DropShadowPanel>-->
 
                             <Border
                                 x:Name="ScrollDecreaseButtonContainer"
@@ -522,12 +524,12 @@
                                 TabFocusNavigation="Once" />
 
                             <!--  Scroll to the right button bottom shadow  -->
-                            <wctc:DropShadowPanel Grid.Column="2" Style="{StaticResource BottomEdgeShadowStyle}">
+                            <!--<wctc:DropShadowPanel Grid.Column="2" Style="{StaticResource BottomEdgeShadowStyle}">
                                 <Grid Height="1" Margin="0,0,0,-1" />
                                 <wctc:DropShadowPanel.Clip>
                                     <RectangleGeometry Rect="0,-12,1024,12" />
                                 </wctc:DropShadowPanel.Clip>
-                            </wctc:DropShadowPanel>
+                            </wctc:DropShadowPanel>-->
 
                             <Border
                                 x:Name="ScrollIncreaseButtonContainer"
@@ -697,7 +699,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="muxc:TabViewItem">
-                    <Grid x:Name="LayoutRoot" Padding="{TemplateBinding Padding}">
+                    <Grid x:Name="LayoutRoot" Padding="{TemplateBinding Padding}" Margin="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition x:Name="LeftColumn" Width="Auto" />
                             <ColumnDefinition Width="*" />
@@ -763,11 +765,9 @@
                             x:Name="TabContainer"
                             Grid.Column="1"
                             Padding="{StaticResource TabViewItemHeaderPadding}"
-                            Background="{ThemeResource TabViewItemHeaderBackground}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
                             Control.IsTemplateFocusTarget="True"
-                            CornerRadius="{TemplateBinding CornerRadius}"
+                            CornerRadius="{StaticResource ControlCornerRadius}"
+                            Background="Transparent"
                             FocusVisualMargin="{TemplateBinding FocusVisualMargin}">
 
                             <Grid.ColumnDefinitions>
@@ -816,7 +816,7 @@
                                 Style="{StaticResource TabViewCloseButtonStyle}" />
                         </Grid>
 
-                        <wctc:DropShadowPanel
+                        <!--<wctc:DropShadowPanel
                             x:Name="ItemLeftSideShadow"
                             Grid.Column="1"
                             HorizontalAlignment="Left"
@@ -827,7 +827,7 @@
                                 <RectangleGeometry Rect="-8,0,8,32" />
                             </wctc:DropShadowPanel.Clip>
 
-                            <Grid Width="1" />
+                            <Grid Width="0" />
 
                         </wctc:DropShadowPanel>
 
@@ -842,7 +842,7 @@
                                 <RectangleGeometry Rect="1,0,8,32" />
                             </wctc:DropShadowPanel.Clip>
 
-                            <Grid Width="1" />
+                            <Grid Width="0" />
 
                         </wctc:DropShadowPanel>
 
@@ -850,15 +850,15 @@
                             x:Name="ItemBottomSideShadow"
                             Grid.ColumnSpan="2"
                             Style="{StaticResource BottomEdgeShadowStyle}">
-                            <Grid Height="1" />
-                        </wctc:DropShadowPanel>
+                            <Grid Height="0" />
+                        </wctc:DropShadowPanel>-->
 
                         <Rectangle
                             x:Name="SelectionIndicator"
                             Grid.ColumnSpan="2"
-                            Height="3"
-                            Margin="0,-1"
-                            VerticalAlignment="Top"
+                            Height="2"
+                            Margin="4,-2"
+                            VerticalAlignment="Bottom"
                             Fill="{StaticResource SystemControlForegroundAccentBrush}"
                             Opacity="0" />
 
@@ -899,7 +899,7 @@
                                         <Setter Target="TabContainer.Margin" Value="{StaticResource TabViewSelectedItemHeaderMargin}" />
                                         <!--<Setter Target="TabContainer.BorderBrush" Value="{ThemeResource TabViewSelectedItemBorderBrush}" />
                                         <Setter Target="TabContainer.BorderThickness" Value="{ThemeResource TabViewSelectedItemBorderThickness}" />-->
-                                        <Setter Target="TabContainer.Background" Value="{ThemeResource TabViewItemHeaderBackgroundSelected}" />
+                                        <!--<Setter Target="TabContainer.Background" Value="{ThemeResource TabViewItemHeaderBackgroundSelected}" />-->
                                         <Setter Target="TabContainer.Padding" Value="{StaticResource TabViewSelectedItemHeaderPadding}" />
                                         <Setter Target="ContentPresenter.Foreground" Value="{ThemeResource TabViewItemHeaderForegroundSelected}" />
                                         <!--<Setter Target="TabContainer.CornerRadius" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CornerRadius, Converter={StaticResource TopCornerRadiusFilterConverter}}" />-->
@@ -911,9 +911,9 @@
 
                                         <!--  Notepads Setters  -->
                                         <Setter Target="SelectionIndicator.Opacity" Value="1" />
-                                        <Setter Target="ItemLeftSideShadow.Visibility" Value="Visible" />
+                                        <!--<Setter Target="ItemLeftSideShadow.Visibility" Value="Visible" />
                                         <Setter Target="ItemRightSideShadow.Visibility" Value="Visible" />
-                                        <Setter Target="ItemBottomSideShadow.Visibility" Value="Collapsed" />
+                                        <Setter Target="ItemBottomSideShadow.Visibility" Value="Collapsed" />-->
                                     </VisualState.Setters>
                                 </VisualState>
 
@@ -939,9 +939,9 @@
 
                                         <!--  Notepads Setters  -->
                                         <Setter Target="SelectionIndicator.Opacity" Value="1" />
-                                        <Setter Target="ItemLeftSideShadow.Visibility" Value="Visible" />
+                                        <!--<Setter Target="ItemLeftSideShadow.Visibility" Value="Visible" />
                                         <Setter Target="ItemRightSideShadow.Visibility" Value="Visible" />
-                                        <Setter Target="ItemBottomSideShadow.Visibility" Value="Collapsed" />
+                                        <Setter Target="ItemBottomSideShadow.Visibility" Value="Collapsed" />-->
                                     </VisualState.Setters>
                                 </VisualState>
 
@@ -967,9 +967,9 @@
 
                                         <!--  Notepads Setters  -->
                                         <Setter Target="SelectionIndicator.Opacity" Value="1" />
-                                        <Setter Target="ItemLeftSideShadow.Visibility" Value="Visible" />
+                                        <!--<Setter Target="ItemLeftSideShadow.Visibility" Value="Visible" />
                                         <Setter Target="ItemRightSideShadow.Visibility" Value="Visible" />
-                                        <Setter Target="ItemBottomSideShadow.Visibility" Value="Collapsed" />
+                                        <Setter Target="ItemBottomSideShadow.Visibility" Value="Collapsed" />-->
                                     </VisualState.Setters>
                                 </VisualState>
                             </VisualStateGroup>
