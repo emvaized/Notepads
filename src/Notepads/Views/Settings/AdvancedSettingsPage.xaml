@@ -71,6 +71,8 @@
                         x:Uid="/Settings/AdvancedPage_AlwaysOpenNewWindow_Description"
                         Margin="0,8,0,0"
                         Style="{ThemeResource DescriptionTextBlockStyle}" />
+                    <ToggleSwitch x:Uid="/Settings/AdvancedPage_LaunchPreferenceSettings_ExitWhenLastTabClosedToggleSwitch"
+                        x:Name="ExitWhenLastTabClosedToggleSwitch" />
                 </StackPanel>
                 <StackPanel x:Name="LanguagePreferenceSettingsPanel">
                     <TextBlock

@@ -174,13 +174,13 @@
             }
         }
 
-        public async Task<ITextEditor> CreateTextEditor(
+        public async Task<ITextEditor> CreateTextEditorAsync(
             Guid id,
             StorageFile file,
             Encoding encoding = null,
             bool ignoreFileSizeLimit = false)
         {
-            var textFile = await FileSystemUtility.ReadFile(file, ignoreFileSizeLimit, encoding);
+            var textFile = await FileSystemUtility.ReadFileAsync(file, ignoreFileSizeLimit, encoding);
             return CreateTextEditor(id, textFile, file, file.Name);
         }
 
@@ -214,9 +214,9 @@
             return textEditor;
         }
 
-        public async Task SaveContentToFileAndUpdateEditorState(ITextEditor textEditor, StorageFile file)
+        public async Task SaveContentToFileAndUpdateEditorStateAsync(ITextEditor textEditor, StorageFile file)
         {
-            await textEditor.SaveContentToFileAndUpdateEditorState(file); // Will throw if not succeeded
+            await textEditor.SaveContentToFileAndUpdateEditorStateAsync(file); // Will throw if not succeeded
             MarkTextEditorSetSaved(textEditor);
             TextEditorSaved?.Invoke(this, textEditor);
         }
@@ -676,7 +676,7 @@
 
                 args.Data.Properties.Add(NotepadsTextEditorMetaData, data);
                 args.Data.Properties.Add(NotepadsTextEditorGuid, editor.Id.ToString());
-                args.Data.Properties.Add(NotepadsInstanceId, App.Id.ToString());
+                args.Data.Properties.Add(NotepadsInstanceId, App.InstanceId.ToString());
                 args.Data.Properties.ApplicationName = App.ApplicationName;
 
                 ApplicationSettingsStore.Write(SetDragAndDropActionStatus, "Started");

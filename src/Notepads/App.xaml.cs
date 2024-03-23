@@ -26,7 +26,7 @@
     {
         public static string ApplicationName = "Notepads";
 
-        public static Guid Id { get; } = Guid.NewGuid();
+        public static Guid InstanceId { get; } = Guid.NewGuid();
 
         public static bool IsPrimaryInstance = false;
         public static bool IsGameBarWidget = false;
@@ -59,9 +59,9 @@
                 InstanceHandlerMutex.Close();
             }
 
-            LoggingService.LogInfo($"[{nameof(App)}] Started: Instance = {Id} IsPrimaryInstance: {IsPrimaryInstance} IsGameBarWidget: {IsGameBarWidget}.");
+            LoggingService.LogInfo($"[{nameof(App)}] Started: Instance = {InstanceId} IsPrimaryInstance: {IsPrimaryInstance} IsGameBarWidget: {IsGameBarWidget}.");
 
-            ApplicationSettingsStore.Write(SettingsKey.ActiveInstanceIdStr, App.Id.ToString());
+            ApplicationSettingsStore.Write(SettingsKey.ActiveInstanceIdStr, App.InstanceId.ToString());
 
             InitializeComponent();
 
@@ -118,7 +118,8 @@
                 { "IsGameBarWidget", IsGameBarWidget.ToString() },
                 { "AlwaysOpenNewWindow", AppSettingsService.AlwaysOpenNewWindow.ToString() },
                 { "IsHighlightMisspelledWordsEnabled", AppSettingsService.IsHighlightMisspelledWordsEnabled.ToString() },
-                { "IsSmartCopyEnabled", AppSettingsService.IsSmartCopyEnabled.ToString() }
+                { "IsSmartCopyEnabled", AppSettingsService.IsSmartCopyEnabled.ToString() },
+                { "ExitWhenLastTabClosed", AppSettingsService.ExitWhenLastTabClosed.ToString() },
             };
 
             LoggingService.LogInfo($"[{nameof(App)}] Launch settings: \n{string.Join("\n", appLaunchSettings.Select(x => x.Key + "=" + x.Value).ToArray())}.");
@@ -304,11 +305,11 @@
         //    }
         //}
 
-        //private static async Task UpdateJumpList()
+        //private static async Task UpdateJumpListAsync()
         //{
         //    if (JumpListService.IsJumpListOutOfDate)
         //    {
-        //        if (await JumpListService.UpdateJumpList())
+        //        if (await JumpListService.UpdateJumpListAsync())
         //        {
         //            JumpListService.IsJumpListOutOfDate = false;
         //        }
