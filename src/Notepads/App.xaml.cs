@@ -45,8 +45,8 @@
             UnhandledException += OnUnhandledException;
             TaskScheduler.UnobservedTaskException += OnUnobservedException;
 
-            var services = new Type[] { typeof(Crashes), typeof(Analytics) };
-            AppCenter.Start(AppCenterSecret, services);
+            // var services = new Type[] { typeof(Crashes), typeof(Analytics) };
+            // AppCenter.Start(AppCenterSecret, services);
 
             InstanceHandlerMutex = new Mutex(true, App.ApplicationName, out bool isNew);
             if (isNew)
