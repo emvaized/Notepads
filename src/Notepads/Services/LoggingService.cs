@@ -44,7 +44,7 @@
 
         public static void LogInfo(string message, bool consoleOnly = false)
         {
-            LogMessage("Info", message, consoleOnly);
+            // LogMessage("Info", message, consoleOnly);
         }
 
         public static void LogWarning(string message, bool consoleOnly = false)
