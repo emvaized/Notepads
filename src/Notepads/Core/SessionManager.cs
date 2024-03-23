@@ -452,7 +452,8 @@
         {
             try
             {
-                await FileSystemUtility.WriteToFileAsync(LineEndingUtility.ApplyLineEnding(text, lineEnding), encoding, file);
+                // await FileSystemUtility.WriteToFileAsync(LineEndingUtility.ApplyLineEnding(text, lineEnding), encoding, file);
+                await FileSystemUtility.WriteTextToFileAsync(file, LineEndingUtility.ApplyLineEnding(text, lineEnding), encoding);
                 return true;
             }
             catch (Exception ex)
