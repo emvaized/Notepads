@@ -1,4 +1,9 @@
-﻿namespace Notepads.Core
+﻿// ---------------------------------------------------------------------------------------------
+//  Copyright (c) 2019-2024, Jiaqi (0x7c13) Liu. All rights reserved.
+//  See LICENSE file in the project root for license information.
+// ---------------------------------------------------------------------------------------------
+
+namespace Notepads.Core
 {
     using System;
     using System.Collections.Generic;
@@ -144,7 +149,7 @@
 
             if (GetNumberOfOpenedTextEditors() > 0)
             {
-                Sets.SelectedItem = textEditorSetsViewItem;
+                _sets.SelectedItem = textEditorSetsViewItem;
                 if (atIndex == -1)
                 {
                     //Sets.ScrollToLastSet();
@@ -162,7 +167,7 @@
                 Sets.TabItems?.Add(editorSetsViewItem);
                 if (selectedEditorId.HasValue && textEditor.Id == selectedEditorId.Value)
                 {
-                    Sets.SelectedItem = editorSetsViewItem;
+                    _sets.SelectedItem = editorSetsViewItem;
                     selectedEditorFound = true;
                 }
             }
@@ -174,13 +179,13 @@
             }
         }
 
-        public async Task<ITextEditor> CreateTextEditor(
+        public async Task<ITextEditor> CreateTextEditorAsync(
             Guid id,
             StorageFile file,
             Encoding encoding = null,
             bool ignoreFileSizeLimit = false)
         {
-            var textFile = await FileSystemUtility.ReadFile(file, ignoreFileSizeLimit, encoding);
+            var textFile = await FileSystemUtility.ReadFileAsync(file, ignoreFileSizeLimit, encoding);
             return CreateTextEditor(id, textFile, file, file.Name);
         }
 
@@ -214,9 +219,9 @@
             return textEditor;
         }
 
-        public async Task SaveContentToFileAndUpdateEditorState(ITextEditor textEditor, StorageFile file)
+        public async Task SaveContentToFileAndUpdateEditorStateAsync(ITextEditor textEditor, StorageFile file)
         {
-            await textEditor.SaveContentToFileAndUpdateEditorState(file); // Will throw if not succeeded
+            await textEditor.SaveContentToFileAndUpdateEditorStateAsync(file); // Will throw if not succeeded
             MarkTextEditorSetSaved(textEditor);
             TextEditorSaved?.Invoke(this, textEditor);
         }
@@ -304,22 +309,22 @@
             {
                 if (selected == setsCount - 1)
                 {
-                    Sets.SelectedIndex = 0;
+                    _sets.SelectedIndex = 0;
                 }
                 else
                 {
-                    Sets.SelectedIndex += 1;
+                    _sets.SelectedIndex += 1;
                 }
             }
             else if (!next && setsCount > 1)
             {
                 if (selected == 0)
                 {
-                    Sets.SelectedIndex = setsCount - 1;
+                    _sets.SelectedIndex = setsCount - 1;
                 }
                 else
                 {
-                    Sets.SelectedIndex -= 1;
+                    _sets.SelectedIndex -= 1;
                 }
             }
         }
@@ -333,7 +338,7 @@
         public void SwitchTo(ITextEditor textEditor)
         {
             var item = GetTextEditorSetsViewItem(textEditor);
-            if (Sets.SelectedItem != item)
+            if (_sets.SelectedItem != item)
             {
                 Sets.SelectedItem = item;
                 //Sets.ScrollIntoView(item);
@@ -676,7 +681,7 @@
 
                 args.Data.Properties.Add(NotepadsTextEditorMetaData, data);
                 args.Data.Properties.Add(NotepadsTextEditorGuid, editor.Id.ToString());
-                args.Data.Properties.Add(NotepadsInstanceId, App.Id.ToString());
+                args.Data.Properties.Add(NotepadsInstanceId, App.InstanceId.ToString());
                 args.Data.Properties.ApplicationName = App.ApplicationName;
 
                 ApplicationSettingsStore.Write(SetDragAndDropActionStatus, "Started");
@@ -800,7 +805,7 @@
                 }
 
                 deferral.Complete();
-                Analytics.TrackEvent("OnSetDropped");
+                AnalyticsService.TrackEvent("OnSetDropped");
             }
             catch (Exception ex)
             {

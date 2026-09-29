@@ -55,8 +55,8 @@
                         <Run x:Uid="/Settings/AboutPage_Notepads_SourceCodeTitle" />
                     </Paragraph>
                     <Paragraph>
-                        <Hyperlink NavigateUri="https://github.com/JasonStein/Notepads">
-                            https://github.com/JasonStein/Notepads
+                        <Hyperlink NavigateUri="https://github.com/0x7c13/Notepads">
+                            https://github.com/0x7c13/Notepads
                         </Hyperlink>
                     </Paragraph>
                     <Paragraph Margin="0,15,0,0">
@@ -77,8 +77,8 @@
                         <Run x:Uid="/Settings/AboutPage_Notepads_IssueAndFeatureRequestsTitle" />
                     </Paragraph>
                     <Paragraph>
-                        <Hyperlink NavigateUri="https://github.com/JasonStein/Notepads/issues">
-                            https://github.com/JasonStein/Notepads/issues
+                        <Hyperlink NavigateUri="https://github.com/0x7c13/Notepads/issues">
+                            https://github.com/0x7c13/Notepads/issues
                         </Hyperlink>
                     </Paragraph>
                 </RichTextBlock>
@@ -97,7 +97,7 @@
                     Margin="0,10,0,0"
                     IsTextSelectionEnabled="False">
                     <Paragraph Margin="0,10,0,10">
-                        <Hyperlink NavigateUri="https://github.com/JasonStein/Notepads/releases">Notepads Releases</Hyperlink>
+                        <Hyperlink NavigateUri="https://github.com/0x7c13/Notepads/releases">Notepads Releases</Hyperlink>
                     </Paragraph>
                 </RichTextBlock>
 
@@ -146,11 +146,11 @@
                         <Run x:Uid="/Settings/AboutPage_Disclaimer_Content" />
                     </Paragraph>
                     <Paragraph>
-                        <LineBreak />
-                        Copyright (c) 2020 Jackie (Jiaqi) Liu.</Paragraph>
+                        <LineBreak /> Copyright (c) 2019-2024 Jackie (Jiaqi) Liu.
+                    </Paragraph>
                     <Paragraph Margin="0,10,0,10">
-                        <Hyperlink NavigateUri="https://github.com/JasonStein/Notepads">
-                            <Run x:Uid="/Settings/AboutPage_PrivacyStatementTitle" />
+                        <Hyperlink NavigateUri="https://github.com/0x7c13/Notepads/blob/master/PRIVACY.md" >
+                            <Run x:Uid="/Settings/AboutPage_PrivacyStatementTitle"/>
                         </Hyperlink>
                     </Paragraph>
                 </RichTextBlock>
