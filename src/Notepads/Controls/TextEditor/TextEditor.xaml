@@ -35,6 +35,7 @@
                     x:Name="TextEditorCore"
                     Grid.Column="0"
                     Padding="6,6,10,6"
+                    Margin="0"
                     Style="{StaticResource TextEditorCore}" />
                 <wctc:InAppNotification
                     x:Name="FindAndReplacePlaceholder"
@@ -86,7 +87,7 @@
                     </wctc:InAppNotification.Content>
                 </wctc:InAppNotification>
             </Grid>
-            <wctc:DropShadowPanel
+            <!--<wctc:DropShadowPanel
                 Grid.Column="1"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Stretch"
@@ -97,7 +98,7 @@
                 <wctc:DropShadowPanel.Clip>
                     <RectangleGeometry Rect="-12,0,12,12960" />
                 </wctc:DropShadowPanel.Clip>
-            </wctc:DropShadowPanel>
+            </wctc:DropShadowPanel>-->
             <ContentPresenter
                 x:Name="SplitPanel"
                 Grid.Column="1"

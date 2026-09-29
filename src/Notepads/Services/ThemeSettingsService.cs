@@ -233,10 +233,11 @@ namespace Notepads.Services
         public static void SetRequestedTheme(Panel backgroundPanel, UIElement currentContent, ApplicationViewTitleBar titleBar)
         {
             // Set requested theme for app background
-            if (backgroundPanel != null)
-            {
-                backgroundPanel.Background = GetAppBackgroundBrush(ThemeMode);
-            }
+            //if (backgroundPanel != null)
+            //{
+            //    backgroundPanel.Background = GetAppBackgroundBrush(ThemeMode);
+            //}
+            GetAppBackgroundBrush(ThemeMode);
 
             if (currentContent is FrameworkElement frameworkElement)
             {
@@ -250,8 +251,9 @@ namespace Notepads.Services
             }
 
             // Set ContentDialog background dimming color
-            ((SolidColorBrush)Application.Current.Resources["SystemControlPageBackgroundMediumAltMediumBrush"]).Color =
-                ThemeMode == ElementTheme.Dark ? Color.FromArgb(153, 0, 0, 0) : Color.FromArgb(153, 255, 255, 255);
+            //((SolidColorBrush)Application.Current.Resources["SystemControlPageBackgroundMediumAltMediumBrush"]).Color =
+            //    ThemeMode == ElementTheme.Dark ? Color.FromArgb(153, 0, 0, 0) : Color.FromArgb(153, 255, 255, 255);
+
 
             if (DialogManager.ActiveDialog != null)
             {
@@ -287,6 +289,14 @@ namespace Notepads.Services
 
             var baseColor = theme == ElementTheme.Light ? lightModeBaseColor : darkModeBaseColor;
 
+            //return new SolidColorBrush(Color.FromArgb(0, 240, 240, 240));
+            //baseColor.A = ((byte)AppBackgroundPanelTintOpacity);
+            ((SolidColorBrush)Application.Current.Resources["SystemControlPageBackgroundMediumAltMediumBrush"]).Color =
+                ThemeMode == ElementTheme.Dark ? Color.FromArgb((byte)(240 * AppBackgroundPanelTintOpacity), 0, 0, 0) :
+                Color.FromArgb((byte)(240 * AppBackgroundPanelTintOpacity), 255, 255, 255);
+
+            return new SolidColorBrush(baseColor);
+
             if (AppBackgroundPanelTintOpacity > 0.99f ||
                 !Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.Xaml.Media.AcrylicBrush") ||
                 App.IsGameBarWidget)
@@ -295,6 +305,9 @@ namespace Notepads.Services
             }
             else
             {
+                baseColor.A = ((byte)AppBackgroundPanelTintOpacity);
+                return new SolidColorBrush(Color.FromArgb(100, 240, 240, 240));
+
                 if (_currentAppBackgroundBrush is HostBackdropAcrylicBrush hostBackdropAcrylicBrush)
                 {
                     hostBackdropAcrylicBrush.LuminosityColor = baseColor;
