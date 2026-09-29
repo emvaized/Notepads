@@ -14,11 +14,11 @@ namespace Notepads.Utilities
 
     public static class DialogManager
     {
-        public static NotepadsDialog ActiveDialog;
+        public static INotepadsDialog ActiveDialog;
 
         private static TaskCompletionSource<bool> _dialogAwaiter = new TaskCompletionSource<bool>();
 
-        public static async Task<ContentDialogResult?> OpenDialogAsync(NotepadsDialog dialog, bool awaitPreviousDialog)
+        public static async Task<ContentDialogResult?> OpenDialogAsync(INotepadsDialog dialog, bool awaitPreviousDialog)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace Notepads.Utilities
             return null;
         }
 
-        private static async Task<ContentDialogResult> OpenDialogInternalAsync(NotepadsDialog dialog, bool awaitPreviousDialog)
+        private static async Task<ContentDialogResult> OpenDialog(INotepadsDialog dialog, bool awaitPreviousDialog)
         {
             TaskCompletionSource<bool> currentAwaiter = _dialogAwaiter;
             TaskCompletionSource<bool> nextAwaiter = new TaskCompletionSource<bool>();

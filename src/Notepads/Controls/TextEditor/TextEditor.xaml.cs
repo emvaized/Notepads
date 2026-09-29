@@ -5,6 +5,8 @@
     using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
+    using Microsoft.AppCenter.Analytics;
+    using Microsoft.Toolkit.Uwp.UI.Controls;
     using Notepads.Commands;
     using Notepads.Controls.FindAndReplace;
     using Notepads.Controls.GoTo;

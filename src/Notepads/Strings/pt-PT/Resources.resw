@@ -117,11 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppCloseSaveReminderDialog_CloseButtonText" xml:space="preserve">
+  <data name="AppCloseSaveReminderDialog.CloseButtonText" xml:space="preserve">
     <value>Cancelar</value>
     <comment>AppCloseSaveReminderDialog: CloseButtonText.</comment>
   </data>
-  <data name="AppCloseSaveReminderDialog_Content" xml:space="preserve">
+  <data name="AppCloseSaveReminderDialog.Content" xml:space="preserve">
     <value>Há alterações não guardadas.</value>
     <comment>AppCloseSaveReminderDialog: "Content" display text.</comment>
   </data>
@@ -157,11 +157,11 @@
     <value>Lamentamos, mas não foi possível abrir o ficheiro "{0}": {1}</value>
     <comment>FileOpenErrorDialog: "Content" display text, {0} stands for file path, {1} stands for error message. You can change the order but DO NOT REMOVE them from the string.</comment>
   </data>
-  <data name="FileOpenErrorDialog_PrimaryButtonText" xml:space="preserve">
+  <data name="FileOpenErrorDialog.PrimaryButtonText" xml:space="preserve">
     <value>Ok</value>
     <comment>FileOpenErrorDialog: PrimaryButtonText.</comment>
   </data>
-  <data name="FileOpenErrorDialog_Title" xml:space="preserve">
+  <data name="FileOpenErrorDialog.Title" xml:space="preserve">
     <value>Erro ao abrir o ficheiro</value>
     <comment>FileOpenErrorDialog: "Title" display text.</comment>
   </data>
@@ -169,11 +169,11 @@
     <value>Lamentamos, mas não foi possível guardar o ficheiro "{0}": {1}</value>
     <comment>FileSaveErrorDialog: "Content" display text, {0} stands for file path, {1} stands for error message. You can change the order but DO NOT REMOVE them from the string.</comment>
   </data>
-  <data name="FileSaveErrorDialog_PrimaryButtonText" xml:space="preserve">
+  <data name="FileSaveErrorDialog.PrimaryButtonText" xml:space="preserve">
     <value>Ok</value>
     <comment>FileSaveErrorDialog: PrimaryButtonText.</comment>
   </data>
-  <data name="FileSaveErrorDialog_Title" xml:space="preserve">
+  <data name="FileSaveErrorDialog.Title" xml:space="preserve">
     <value>Erro ao guardar o ficheiro</value>
     <comment>FileSaveErrorDialog: "Title" display text.</comment>
   </data>
@@ -253,7 +253,7 @@
     <value>Definições</value>
     <comment>MainMenu: "Settings" button display text.</comment>
   </data>
-  <data name="RevertAllChangesConfirmationDialog_CloseButtonText" xml:space="preserve">
+  <data name="RevertAllChangesConfirmationDialog.CloseButtonText" xml:space="preserve">
     <value>Cancelar</value>
     <comment>RevertAllChangesConfirmationDialog: CloseButtonText.</comment>
   </data>
@@ -261,7 +261,7 @@
     <value>Todas as alterações incluindo texto, terminação e codificação de linha feitas no "{0}" serão revertidas!</value>
     <comment>RevertAllChangesConfirmationDialog: "Content" display text, {0} stands for file name. You can change the order but DO NOT REMOVE it from the string.</comment>
   </data>
-  <data name="RevertAllChangesConfirmationDialog_PrimaryButtonText" xml:space="preserve">
+  <data name="RevertAllChangesConfirmationDialog.PrimaryButtonText" xml:space="preserve">
     <value>Sim</value>
     <comment>RevertAllChangesConfirmationDialog: PrimaryButtonText.</comment>
   </data>
@@ -269,7 +269,7 @@
     <value>Tem a certeza de que pretende reverter todas as alterações?</value>
     <comment>RevertAllChangesConfirmationDialog: "Title" display text.</comment>
   </data>
-  <data name="SetCloseSaveReminderDialog_CloseButtonText" xml:space="preserve">
+  <data name="SetCloseSaveReminderDialog.CloseButtonText" xml:space="preserve">
     <value>Cancelar</value>
     <comment>SetCloseSaveReminderDialog: CloseButtonText.</comment>
   </data>
@@ -277,15 +277,15 @@
     <value>Guardar o ficheiro "{0}"?</value>
     <comment>SetCloseSaveReminderDialog: "Content" display text.  {0} stands for file name/path. You can change the order but DO NOT REMOVE it from the string.</comment>
   </data>
-  <data name="SetCloseSaveReminderDialog_PrimaryButtonText" xml:space="preserve">
+  <data name="SetCloseSaveReminderDialog.PrimaryButtonText" xml:space="preserve">
     <value>Guardar</value>
     <comment>SetCloseSaveReminderDialog: PrimaryButtonText.</comment>
   </data>
-  <data name="SetCloseSaveReminderDialog_SecondaryButtonText" xml:space="preserve">
+  <data name="SetCloseSaveReminderDialog.SecondaryButtonText" xml:space="preserve">
     <value>Não Guardar</value>
     <comment>SetCloseSaveReminderDialog: SecondaryButtonText.</comment>
   </data>
-  <data name="SetCloseSaveReminderDialog_Title" xml:space="preserve">
+  <data name="SetCloseSaveReminderDialog.Title" xml:space="preserve">
     <value>Guardar as alterações?</value>
     <comment>SetCloseSaveReminderDialog: "Title" display text.</comment>
   </data>
@@ -641,11 +641,11 @@
     <value>Fino</value>
     <comment>FontWeight: "Thin"</comment>
   </data>
-  <data name="FileRenameDialog_CloseButtonText" xml:space="preserve">
+  <data name="FileRenameDialog.CloseButtonText" xml:space="preserve">
     <value>Cancelar</value>
     <comment>FileRenameDialog: CloseButtonText.</comment>
   </data>
-  <data name="FileRenameDialog_PrimaryButtonText" xml:space="preserve">
+  <data name="FileRenameDialog.PrimaryButtonText" xml:space="preserve">
     <value>Guardar</value>
     <comment>FileRenameDialog: PrimaryButtonText.</comment>
   </data>

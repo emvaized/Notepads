@@ -5,15 +5,15 @@
 
 namespace Notepads.Views.Settings
 {
+    using Microsoft.UI.Xaml.Controls;
     using Notepads.Extensions;
     using Notepads.Services;
     using System.Linq;
     using Windows.UI;
     using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Navigation;
 
-    public sealed partial class SettingsPage : Page
+    public sealed partial class SettingsPage : Windows.UI.Xaml.Controls.Page
     {
         public SettingsPage()
         {
@@ -34,7 +34,10 @@ namespace Notepads.Views.Settings
                 ThemeSettingsService.OnThemeChanged += ThemeSettingsService_OnThemeChanged;
                 ThemeSettingsService.OnAccentColorChanged += ThemeSettingsService_OnAccentColorChanged;
             }
-            ((NavigationViewItem)SettingsNavigationView.MenuItems.First()).IsSelected = true;
+
+            var firstItem = ((NavigationViewItem)SettingsNavigationView.MenuItems.First());
+            firstItem.IsSelected = true;
+            SettingsPanel.Show(Windows.UI.Xaml.Controls.ToolTipService.GetToolTip(firstItem).ToString(), firstItem?.Tag as string);
         }
 
         private void SettingsPage_Unloaded(object sender, RoutedEventArgs e)
@@ -72,7 +75,7 @@ namespace Notepads.Views.Settings
 
         private void SettingsPanel_OnItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
-            SettingsPanel.Show((args.InvokedItem as string), (args.InvokedItemContainer as NavigationViewItem)?.Tag as string);
+            SettingsPanel.Show((Windows.UI.Xaml.Controls.ToolTipService.GetToolTip(args.InvokedItemContainer) as string), (args.InvokedItemContainer as NavigationViewItem)?.Tag as string);
         }
     }
 }

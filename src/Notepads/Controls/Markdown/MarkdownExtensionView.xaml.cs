@@ -12,10 +12,14 @@ namespace Notepads.Controls.Markdown
     using System;
     using System.IO;
     using System.Threading.Tasks;
-    using TextEditor;
+    using Notepads.Controls.TextEditor;
+    using Notepads.Extensions;
+    using Notepads.Services;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Media;
+    using Microsoft.Toolkit.Uwp.UI;
+    using Microsoft.Toolkit.Uwp.UI.Controls;
 
     public sealed partial class MarkdownExtensionView : UserControl, IContentPreviewExtension
     {

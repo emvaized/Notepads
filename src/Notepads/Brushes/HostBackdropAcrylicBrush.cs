@@ -25,8 +25,7 @@ namespace Notepads.Brushes
     using Microsoft.Graphics.Canvas;
     using Microsoft.Graphics.Canvas.Effects;
     using Microsoft.Graphics.Canvas.UI.Composition;
-    using Controls.Helpers;
-    using Notepads.Services;
+    using Microsoft.Toolkit.Uwp;
 
     public sealed class HostBackdropAcrylicBrush : XamlCompositionBrushBase, IDisposable
     {
@@ -166,7 +165,7 @@ namespace Notepads.Brushes
 
         private async void OnEnergySaverStatusChanged(object sender, object e)
         {
-            await _dispatcherQueue.ExecuteOnUIThreadAsync(async () =>
+            await _dispatcherQueue.EnqueueAsync(async () =>
             {
                 await BuildInternalAsync();
             });
@@ -174,7 +173,7 @@ namespace Notepads.Brushes
 
         private async void OnAdvancedEffectsEnabledChanged(UISettings sender, object args)
         {
-            await _dispatcherQueue.ExecuteOnUIThreadAsync(async () =>
+            await _dispatcherQueue.EnqueueAsync(async () =>
             {
                 await BuildInternalAsync();
             });

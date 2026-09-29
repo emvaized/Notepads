@@ -153,7 +153,7 @@
     <value>Informativa sulla Privacy</value>
     <comment>AboutPage PrivacyStatementTitle display text.</comment>
   </data>
-  <data name="AboutPage_Title.Content" xml:space="preserve">
+  <data name="AboutPage_Title.ToolTipService.ToolTip" xml:space="preserve">
     <value>Informazioni</value>
     <comment>AboutPage Title display text.</comment>
   </data>
@@ -169,7 +169,7 @@
     <value>Barra di stato</value>
     <comment>AdvancedPage StatusBarSettings Title display text.</comment>
   </data>
-  <data name="AdvancedPage_Title.Content" xml:space="preserve">
+  <data name="AdvancedPage_Title.ToolTipService.ToolTip" xml:space="preserve">
     <value>Avanzate</value>
     <comment>AdvancedPage Title display text.</comment>
   </data>
